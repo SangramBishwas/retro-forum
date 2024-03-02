@@ -16,11 +16,98 @@
 </head>
 
 <body>
-    <header>
-        
+    <header class="mx-5 lg:mx-28">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <div class="flex-none">
+                            <ul class="menu space-y-4">
+                                <div class="tooltip tooltip-bottom" data-tip="home">
+                                    <button class="btn rounded-full"><i class="fa-solid fa-house text-xl"></i></button>
+                                </div>
+                                <div class="tooltip tooltip-bottom" data-tip="tool">
+                                    <button class="btn rounded-full"><i class="fa-solid fa-pen text-xl"></i></button>
+                                </div>
+                                <div class="tooltip tooltip-bottom" data-tip="user">
+                                    <button class="btn rounded-full"><i class="fa-solid fa-user-plus text-xl"></i></button>
+                                </div>
+                                <div class="tooltip tooltip-bottom" data-tip="flag">
+                                    <button class="btn rounded-full"><i class="fa-regular fa-flag text-xl"></i></button>
+                                </div>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+                <a class="font-black text-4xl cursor-pointer">Metro</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <div class="flex-none">
+                        <ul class="menu menu-horizontal space-x-4">
+                            <div class="tooltip tooltip-bottom" data-tip="home">
+                                <button class="btn rounded-full"><i class="fa-solid fa-house text-xl"></i></button>
+                            </div>
+                            <div class="tooltip tooltip-bottom" data-tip="tool">
+                                <button class="btn rounded-full"><i class="fa-solid fa-pen text-xl"></i></button>
+                            </div>
+                            <div class="tooltip tooltip-bottom" data-tip="user">
+                                <button class="btn rounded-full"><i class="fa-solid fa-user-plus text-xl"></i></button>
+                            </div>
+                            <div class="tooltip tooltip-bottom" data-tip="flag">
+                                <button class="btn rounded-full"><i class="fa-regular fa-flag text-xl"></i></button>
+                            </div>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <button class="btn bg-[#797DFC] rounded-3xl font-bold text-white text-lg">Sign In</button>
+            </div>
+        </div>
+        <div class="hero min-h-full bg-[#12132D] bg-[url('./images/bgbanner.png')] bg-no-repeat mt-10 lg:m-10 rounded-3xl">
+            <div class="hero-content flex-col lg:flex-row lg:p-24">
+                <div class="space-y-4">
+                    <h1 class="text-5xl font-bold text-white">Welcome To The <br><span>MeTro</span> Forum</h1>
+                    <p class="py-6 text-white">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+                        excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <div class="join">
+                        <input class="input input-bordered join-item" placeholder="Email" />
+                        <button
+                            class="btn join-item rounded-r-full text-white text-xl bg-[#797DFC] font-bold">Search</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl w-full lg:w-1/2 p-10 space-y-3">
+                    <div class="flex justify-between">
+                        <h3 class="font-medium text-xl">Registered Users</h3>
+                        <h5 class="font-medium text-xl">01</h5>
+                    </div>
+                    <div class="flex justify-between">
+                        <h3 class="font-medium text-xl">Forum</h3>
+                        <h5 class="font-medium text-xl">05</h5>
+                    </div>
+                    <div class="flex justify-between">
+                        <h3 class="font-medium text-xl">Topics</h3>
+                        <h5 class="font-medium text-xl">01</h5>
+                    </div>
+                    <div class="flex justify-between">
+                        <h3 class="font-medium text-xl">Replies</h3>
+                        <h5 class="font-medium text-xl">01</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
-
+        
     </main>
     <footer>
 
