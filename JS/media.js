@@ -8,7 +8,7 @@ const displayLatestPosts = (latestPosts) =>{
     latestPosts.forEach(post => {
         console.log(post)
         const cards = document.createElement('div');
-        cards.classList = `card card-compact w-96 bg-base-100 shadow-xl`;
+        cards.classList = `card card-compact w-96 bg-base-100 shadow-xl border border-[#12132D26] p-5 rounded-xl`;
         cards.innerHTML = `
         <figure><img src="${post.cover_image}" alt="Shoes" /></figure>    
         <div class="card-body">
