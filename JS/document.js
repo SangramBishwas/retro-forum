@@ -1,11 +1,18 @@
-const loadPosts = async (value = '6') => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`);
+const loadPosts = async () => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
     const data = await res.json();
     const posts = data.posts;
     displayPosts(posts);
 }
+const loadSearchPosts = async (value) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`);
+    const data = await res.json();
+    const Searchposts = data.posts;
+    displayPosts(Searchposts);
+}
 const displayPosts = (posts) => {
-    const postContainer = document.getElementById('post-container')
+    const postContainer = document.getElementById('post-container');
+    postContainer.textContent = '';
     posts.forEach(post => {
         // console.log(post);
         const postCard = document.createElement('div');
@@ -46,6 +53,7 @@ const displayPosts = (posts) => {
         postContainer.appendChild(postCard);
 
     });
+    loadingSpinner(false);
 }
 
 let number = 0;
@@ -65,6 +73,7 @@ const messageButton = (title, view) => {
 `
     messageContainer.appendChild(messageCard);
 }
+
 const getNumberById = (elementId, value) => {
     const element = document.getElementById(elementId);
     element.innerHTML = value;
@@ -74,6 +83,13 @@ const controlSearch = () => {
     console.log('clicked')
     const searchInput = document.getElementById('search-input-value');
     const searchTextValue = searchInput.value;
-    loadPosts(searchTextValue);
+    loadSearchPosts(searchTextValue);
+    loadingSpinner(true);
 }
+
+const loadingSpinner = (isLoading) => {
+    const loading = document.getElementById('loading-spinner');
+    isLoading ? loading.classList.remove('hidden') : loading.classList.add('hidden');
+}
+
 loadPosts()
