@@ -1,5 +1,5 @@
-const loadPosts = async () => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
+const loadPosts = async (value = '6') => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`);
     const data = await res.json();
     const posts = data.posts;
     displayPosts(posts);
@@ -7,12 +7,15 @@ const loadPosts = async () => {
 const displayPosts = (posts) => {
     const postContainer = document.getElementById('post-container')
     posts.forEach(post => {
-        // console.log(post)
+        // console.log(post);
         const postCard = document.createElement('div');
         postCard.classList = `flex flex-col lg:flex-row bg-[#797DFC1A] w-full p-3 lg:p-10 rounded-3xl`;
         postCard.innerHTML = `
-        <div class="flex">
-        <img class="w-1/12 h-1/4 rounded" src="${post.image}" alt="">
+        <div class="flex w-full">
+        <div class="relative">
+        <img class="w-[70px] h-[63px] rounded" src="${post.image}" alt="" />
+        <div class="absolute -top-1 left-12 h-[20px] w-[20px] rounded-full ${post.isActive ? 'bg-green-500' : 'bg-red-700'}"></div>
+        </div>
         <div class="w-full mx-2 lg:mx-5 space-y-4">
             <div class="flex items-center w-full gap-4 lg:gap-10">
                 <span class="text-sm font-medium text-[#12132DCC]">${post.category}</span>
@@ -44,9 +47,9 @@ const displayPosts = (posts) => {
 
     });
 }
+
 let number = 0;
 const messageButton = (title, view) => {
-    console.log('clicked', title, view);
     number += 1;
     getNumberById('msg-number', number);
     const messageContainer = document.getElementById('msg-container');
@@ -67,4 +70,10 @@ const getNumberById = (elementId, value) => {
     element.innerHTML = value;
 }
 
+const controlSearch = () => {
+    console.log('clicked')
+    const searchInput = document.getElementById('search-input-value');
+    const searchTextValue = searchInput.value;
+    loadPosts(searchTextValue);
+}
 loadPosts()
