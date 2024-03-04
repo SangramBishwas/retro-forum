@@ -6,7 +6,7 @@ const loadLeteastPost = async () => {
 const displayLatestPosts = (latestPosts) =>{
     const latestPostContainer = document.getElementById('latest-post-container');
     latestPosts.forEach(post => {
-        console.log(post)
+        // console.log(post)
         const cards = document.createElement('div');
         cards.classList = `card card-compact w-96 bg-base-100 shadow-xl border border-[#12132D26] p-5 rounded-xl`;
         cards.innerHTML = `

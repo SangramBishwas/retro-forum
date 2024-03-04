@@ -44,7 +44,7 @@ const displayPosts = (posts) => {
                         <span>${post.posted_time}min</span>
                     </div>
                 </div>
-                <button onclick="messageButton('${post.title}', '${post.view_count}')" class="btn"><img class="w-6 lg:w-10 cursor-pointer" src="./images/msg.png" alt="">
+                <button onclick="messageButton('${post.title.replace(/'/g,'@')}', '${post.view_count}')" class="btn"><img class="w-6 lg:w-10 cursor-pointer" src="./images/msg.png" alt="">
                 </button>
             </div>
         </div>
@@ -80,7 +80,7 @@ const getNumberById = (elementId, value) => {
 }
 
 const controlSearch = () => {
-    console.log('clicked')
+    // console.log('clicked')
     const searchInput = document.getElementById('search-input-value');
     const searchTextValue = searchInput.value;
     loadSearchPosts(searchTextValue);
